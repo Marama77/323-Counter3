@@ -8,7 +8,7 @@ const btnStyle = "bg-indigo-500 hover:bg-fuchsia-500 text-white font-bold py-2 p
   // View function which represents the UI as HTML-tag functions
   export function view(dispatch, model, MSGS) {
     return div({ className: "flex flex-col gap-4 items-center" }, [
-      h1({ className: "text-2xl" }, `My Title`),
+      h1({ className: "font-bold md:text-5xl" }, `323-Counter`),
       button({ className: btnStyle, onclick: () => dispatch(MSGS.UPDATE_MODEL) }, "Update Model"),
       p({ className: "text-2xl" }, `Time: ${model.currentTime}`),
       button({ className: btnStyle, onclick: () => dispatch(MSGS.UPDATE_RANDOM_NUMBER) }, "Update Random Number"),

@@ -1,5 +1,5 @@
-import hh from "hyperscript-helpers";
-import { h, diff, patch } from "virtual-dom";
+
+import { diff, patch } from "virtual-dom";
 import createElement from "virtual-dom/create-element";
 
 //imports function view from view.js
@@ -9,6 +9,8 @@ import { view } from './view.js';
 const MSGS = {
     UPDATE_MODEL: "UPDATE_MODEL",
     UPDATE_RANDOM_NUMBER: "UPDATE_RANDOM_NUMBER",
+    INCREASE_COUNT: "INCREASE_COUNT",
+    DECREASE_COUNT: "DECREASE_COUNT"
     // ... ℹ️ additional messages
   };
 
