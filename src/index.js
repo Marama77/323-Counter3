@@ -7,23 +7,20 @@ import { view } from './view.js';
 
 // Messages which can be used to update the model
 const MSGS = {
-    UPDATE_MODEL: "UPDATE_MODEL",
-    UPDATE_RANDOM_NUMBER: "UPDATE_RANDOM_NUMBER",
     INCREASE_COUNT: "INCREASE_COUNT",
-    DECREASE_COUNT: "DECREASE_COUNT"
-    // ... ℹ️ additional messages
+    DECREASE_COUNT: "DECREASE_COUNT",
+    RESET_COUNT: "RESET_COUNT"
   };
 
   // Update function which takes a message and a model and returns a new/updated model
 function update(msg, model) {
     switch (msg) {
-      case MSGS.UPDATE_MODEL:
-        return { ...model, currentTime: new Date().toLocaleTimeString() };
-  
-      case MSGS.UPDATE_RANDOM_NUMBER:
-        return { ...model, randomNumber: Math.random() };
-      default:
-        return model;
+      case MSGS.INCREASE_COUNT:
+        return { ...model, counter: model.counter + 1 };
+      case MSGS.DECREASE_COUNT:
+        return { ...model, counter: model.counter - 1 };
+      case MSGS.RESET_COUNT:
+        return { ...model, counter: model.counter = 0 };
     }
   }
 
@@ -44,8 +41,7 @@ function app(initModel, update, view, node) {
 
   // The initial model when the app starts
 const initModel = {
-    currentTime: new Date().toLocaleTimeString(),
-    randomNumber: 1,
+    counter: 0,
   };
   
   // The root node of the app (the div with id="app" in index.html)
